@@ -1,27 +1,30 @@
 class Solution {
     public boolean closeStrings(String word1, String word2) {
-        if (word1.length() != word2.length()) return false; // Early return if lengths differ
+        if (word1.length() != word2.length()) return false; // Strings of different lengths cannot be close.
         
-        // Count the frequency of each character in both words
-        HashMap<Character, Integer> freq1 = new HashMap<>();
-        HashMap<Character, Integer> freq2 = new HashMap<>();
-        for (char c : word1.toCharArray()) {
-            freq1.put(c, freq1.getOrDefault(c, 0) + 1);
+        HashMap<Character, Integer> freqMap1 = new HashMap<>();
+        HashMap<Character, Integer> freqMap2 = new HashMap<>();
+        
+        // Populate frequency maps for both strings.
+        for (int i = 0; i < word1.length(); i++) {
+            char c1 = word1.charAt(i);
+            char c2 = word2.charAt(i);
+            freqMap1.put(c1, freqMap1.getOrDefault(c1, 0) + 1);
+            freqMap2.put(c2, freqMap2.getOrDefault(c2, 0) + 1);
         }
-        for (char c : word2.toCharArray()) {
-            freq2.put(c, freq2.getOrDefault(c, 0) + 1);
+        
+        // Verify both strings have the same set of characters.
+        if (!freqMap1.keySet().equals(freqMap2.keySet())) {
+            return false;
         }
         
-        // Ensure both strings have the same set of characters
-        if (!freq1.keySet().equals(freq2.keySet())) return false;
+        // Sort the frequency values from both maps to ensure the same frequency distribution.
+        ArrayList<Integer> freqList1 = new ArrayList<>(freqMap1.values());
+        ArrayList<Integer> freqList2 = new ArrayList<>(freqMap2.values());
+        Collections.sort(freqList1);
+        Collections.sort(freqList2);
         
-        // Convert frequency values to lists and sort them
-        List<Integer> values1 = new ArrayList<>(freq1.values());
-        List<Integer> values2 = new ArrayList<>(freq2.values());
-        Collections.sort(values1);
-        Collections.sort(values2);
-        
-        // The sorted lists of frequencies must match
-        return values1.equals(values2);
+        // Directly compare the sorted lists of frequencies.
+        return freqList1.equals(freqList2);
     }
 }
