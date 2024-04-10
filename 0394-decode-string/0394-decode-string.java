@@ -1,31 +1,28 @@
 class Solution {
     public String decodeString(String s) {
-        Stack<Integer> counts = new Stack<>();
-        Stack<String> resultStack = new Stack<>();
+        Stack<Integer> multiplierStack = new Stack<>();
+        Stack<String> stringStack = new Stack<>();
         String currentString = "";
-        int k = 0;
+        int currentNumber = 0;
         
         for (char ch : s.toCharArray()) {
             if (Character.isDigit(ch)) {
-                // Accumulate the digit for the number k
-                k = k * 10 + (ch - '0');
+                currentNumber = currentNumber * 10 + (ch - '0');
             } else if (ch == '[') {
-                // Push the current count and string to their respective stacks
-                counts.push(k);
-                resultStack.push(currentString);
-                // Reset for the new segment
+                // Push current state to stacks and reset
+                multiplierStack.push(currentNumber);
+                stringStack.push(currentString);
+                currentNumber = 0;
                 currentString = "";
-                k = 0;
             } else if (ch == ']') {
-                // Pop count and string to construct the repeated segment
-                StringBuilder temp = new StringBuilder(resultStack.pop());
-                int repeatTimes = counts.pop();
-                for (int i = 0; i < repeatTimes; i++) {
-                    temp.append(currentString);
+                // Pop and decode
+                StringBuilder decodedString = new StringBuilder(stringStack.pop());
+                int multiplier = multiplierStack.pop();
+                for (int i = 0; i < multiplier; i++) {
+                    decodedString.append(currentString);
                 }
-                currentString = temp.toString();
-            } else {
-                // Add current character to the string
+                currentString = decodedString.toString();
+            } else { // Character is a letter
                 currentString += ch;
             }
         }
