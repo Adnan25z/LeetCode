@@ -6,6 +6,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/Adnan25z/LeetCode/tree/master/0001-two-sum) |
 | [2137-final-value-of-variable-after-performing-operations](https://github.com/Adnan25z/LeetCode/tree/master/2137-final-value-of-variable-after-performing-operations) |
 ## String
 |  |
@@ -20,4 +21,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1806-count-of-matches-in-tournament](https://github.com/Adnan25z/LeetCode/tree/master/1806-count-of-matches-in-tournament) |
+## Hash Table
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/Adnan25z/LeetCode/tree/master/0001-two-sum) |
 <!---LeetCode Topics End-->
