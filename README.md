@@ -40,4 +40,16 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0201-bitwise-and-of-numbers-range](https://github.com/Adnan25z/LeetCode/tree/master/0201-bitwise-and-of-numbers-range) |
+## Tree
+|  |
+| ------- |
+| [0129-sum-root-to-leaf-numbers](https://github.com/Adnan25z/LeetCode/tree/master/0129-sum-root-to-leaf-numbers) |
+## Depth-First Search
+|  |
+| ------- |
+| [0129-sum-root-to-leaf-numbers](https://github.com/Adnan25z/LeetCode/tree/master/0129-sum-root-to-leaf-numbers) |
+## Binary Tree
+|  |
+| ------- |
+| [0129-sum-root-to-leaf-numbers](https://github.com/Adnan25z/LeetCode/tree/master/0129-sum-root-to-leaf-numbers) |
 <!---LeetCode Topics End-->
